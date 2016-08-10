@@ -52,6 +52,5 @@ To connect to multiple instances, use:
 <img src="http://i.imgur.com/FwhscSv.png" height=480 width=270>
 <img src="http://i.imgur.com/WUbxOQH.png" height=480 width=270>
 <img src="http://i.imgur.com/GXvicBl.png" height=480 width=270>
-<img src="http://i.imgur.com/16nfV6W.png" height=480 width=270>
 <img src="http://i.imgur.com/s7YRSor.png" height=480 width=270>
 <img src="http://i.imgur.com/3ZdhtpT.png">
