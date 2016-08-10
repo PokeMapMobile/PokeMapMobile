@@ -2,14 +2,14 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/pokemapmobiledev)
 
-PokeMapMobile is a web service that brings your scanning results from your [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone.
+PokéMapMobile is a web service that brings your scanning results from your [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone.
 
 * Background location tracking to focus your maps to scan where you currently are through your phone's GPS
 * Push notifications via [Pushbullet](https://www.pushbullet.com) to notify you of pokemon even while the app is in the background or when your phone is locked.
 * Customize which Pokemon you are notified of as well as how far the Pokémon is. 
 * View Pokémon Locations through the in-app Map or Google Maps locations via Pushbullet
 
-**Note**: Currently the app is only for Android. Good news is that the iOS version is ready to go! However being being poor college students and all makes it hard to get on the iOS app store. Donating to help bring this to iOS would be very appreciated. Until then, we have placed Ads in the app.
+PokéMapMobile is for ready for both iOS and Android. However, at this time we havent figured out iOS distribution without the app store. Any tips are welcome!
 
 ## Setup
 
@@ -23,7 +23,7 @@ We assume that you already know how to run [PokemonGo-Map](https://github.com/Po
 
 The complete setup is as follows:
 
-1. Download and unzip the desktop app for your OS and download the PokeMapMobile.apk from the releases section.
+1. Download and unzip the desktop app for your OS and download the PokeMapMobile.apk from the [releases section](https://github.com/PokeMapMobile/PokeMapMobile/releases/latest).
 2. Run all of your instances of [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map), but add the command line parameter `-wh http://localhost:3001`. **Note**: You can not use the `-ns` flag, as the web server is needed to change to location. You must also specify a port with the `-P` flag!
   * Example command: `python runserver.py <login credentials -a -u -p...> -k $GMAPS_KEY -l $LOCATION -st $STEP_LIMIT -P 5000 -wh http://localhost:3001` 
 
