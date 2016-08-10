@@ -1,11 +1,17 @@
 # PokeMapMobile
 
-PokeMapMobile is a web service that brings your scanning results from your [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone. Get the mobile app on Google Play (link here). iOS app is ready, but without a developer account it can't be published. If you would like to donate to support development.
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](paypal.me/pokemapmobile)
+
+PokeMapMobile is a web service that brings your scanning results from your [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone. Get the mobile app on Google Play (link here).
+
+
 
 * Background location tracking to focus your maps to scan where you currently are through your phone's GPS
 * Push notifications via [Pushbullet](https://www.pushbullet.com) to notify you of pokemon even while the app is in the background or when your phone is locked.
 * Customize which Pokemon you are notified of as well as how far the pokemon is. 
 * View Pokemon Locations through the in-app Map or Google Maps locations via Pushbullet
+
+**Note**: Currently the app is only for Android. Good news is that the iOS version is ready to go! However being being poor college students and all makes it hard to get on the iOS app store. Donating to help bring this to iOS would be very appreciated. Until then, we have placed Ads in the app.
 
 This Repository is specifically for the Desktop application, which serves as the connection between your [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) instances and your phone.
 
@@ -21,7 +27,7 @@ We assume that you already know how to run [PokemonGo-Map](https://github.com/Po
 
 The complete setup is as follows:
 
-1. Run all of your instances of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map), but add the command line parameter `-wh http://localhost:3001`. *Note*: You can not use the `-ns` flag, as the web server is needed to change to location. You must also specify a port with the `-P` flag!
+1. Run all of your instances of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map), but add the command line parameter `-wh http://localhost:3001`. **Note**: You can not use the `-ns` flag, as the web server is needed to change to location. You must also specify a port with the `-P` flag!
   * Example command: `python runserver.py <login credentials -a -u -p...> -k $GMAPS_KEY -l $LOCATION -st $STEP_LIMIT -P 5000 -wh http://localhost:3001` 
 
 2. Run the PokeMapMobile Desktop.
