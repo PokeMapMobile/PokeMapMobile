@@ -42,6 +42,5 @@ If you did everything correctly, you will begin to receive pokemon and notificat
 ![alt text](http://i.imgur.com/FwhscSv.png)
 ![alt text](http://i.imgur.com/3ZdhtpT.png)
 ![alt text](http://i.imgur.com/WUbxOQH.png)
-![alt text](http://i.imgur.com/GXvicBl.png)
 ![alt text](http://i.imgur.com/16nfV6W.png)
 ![alt text](http://i.imgur.com/s7YRSor.png)
