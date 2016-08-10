@@ -12,40 +12,43 @@ const optionDefinitions = [
   {name: 'step', alias: 's', type: Number, multiple: true},
 ]
 
-var options = commandLineArgs(optionDefinitions)
-
-if(options.host.length != options.step.length) {
-  throw new Error('Error: Command line arguments incorrect. Number of hosts is not the same as the number of step limits provided.');
-}
-
-for(let i in options.host) {
-  if(options.host[i].charAt(0) === ':') {
-    options.host[i] = 'http://localhost' + options.host[i];
-  }
-  if(options.host[i] === config.hostUrl) {
-    throw new Error('Error: A Map\'s url is the same url as this application.');
-  }
-}
 
 class App {
-  constructor()
+  constructor(isElectronApp)
   {
+    this.isElectronApp = isElectronApp;
     this.express = express();
     this.express.use(bodyParser.json())
     this.express.use('/', this.routes());
     this.socket = require('socket.io-client')(config.hostUrl + '/desktop');
     this.socketEvents();
 
+
+    
     this.maps = [];
-    for(let i in options.host) {
-      let map = {
-        host: options.host[i],
-        steps: options.step[i],
-        location: null,
+    if(!isElectronApp) {
+      var options = commandLineArgs(optionDefinitions)
+      if(options.host.length != options.step.length) {
+        throw new Error('Error: Command line arguments incorrect. Number of hosts is not the same as the number of step limits provided.');
       }
-      this.maps.push(map);
+
+      for(let i in options.host) {
+        if(options.host[i].charAt(0) === ':') {
+          options.host[i] = 'http://localhost' + options.host[i];
+        }
+        if(options.host[i] === config.hostUrl) {
+          throw new Error('Error: A Map\'s url is the same url as this application.');
+        }
+      }
+      for(let i in options.host) {
+        let map = {
+          host: options.host[i],
+          steps: options.step[i],
+          location: null,
+        }
+        this.maps.push(map);
+      }
     }
-    console.log(this.maps);
     this.express.listen(3001);
   }
 
@@ -69,9 +72,13 @@ class App {
     {
       this.desktopClientId = data.desktopClientId;
       console.log('Connected to server. Your ClientId is: ' + this.desktopClientId);
+      if(this.isElectronApp) {
+        require('./static/js/Emitter.js').emit('desktop connected', data);
+      }
     })
     this.socket.on('location update', (data) =>
     {
+      console.log('got new location')
       var newLocation = {
         latitude: data.lat,
         longitude: data.lng,
@@ -116,6 +123,9 @@ function updateMap(map)
     if(err) {
       console.log('Error updating map:');
       console.log(err);
+      if(this.isElectronApp) {
+        Emitter.emit('map error', map);
+      }
     } else {
       console.log('Updated map location. Status Code: ' + res.statusCode);
     }
@@ -124,4 +134,5 @@ function updateMap(map)
 
 
 
-module.exports = new App()
+
+module.exports = App
