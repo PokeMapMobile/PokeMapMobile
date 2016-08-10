@@ -6,7 +6,7 @@ PokéMapMobile is a web service that brings your scanning results from your [Pok
 
 * Background location tracking to focus your maps to scan where you currently are through your phone's GPS
 * Push notifications via [Pushbullet](https://www.pushbullet.com) to notify you of pokemon even while the app is in the background or when your phone is locked.
-* Customize which Pokemon you are notified of as well as how far the Pokémon is. 
+* Customize which Pokémon you are notified of as well as how far the Pokémon is. 
 * View Pokémon Locations through the in-app Map or Google Maps locations via Pushbullet
 
 PokéMapMobile is for ready for both iOS and Android. However, at this time we havent figured out iOS distribution without the app store. Any tips are welcome!
@@ -21,7 +21,7 @@ PokéMapMobile consists of three parts:
 2. The PokéMapMobile Desktop Application.
 3. The mobile application.
 
-We assume that you already know how to run [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) through the command line. The application interfaces with the app's [webhooks](https://github.com/PokemonGoMap/PokemonGo-Map/wiki/Using-Webhooks).
+We assume that you already know how to run [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) through the command line. The application interfaces with the app's [webhooks](https://github.com/PokemonGoMap/PokemonGo-Map/wiki/Using-Webhooks).
 
 The complete setup is as follows:
 
