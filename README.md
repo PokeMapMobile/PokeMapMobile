@@ -23,7 +23,7 @@ PokéMapMobile consists of three parts:
 2. The PokéMapMobile Desktop Application.
 3. The mobile application.
 
-We assume that you already know how to run [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) through the command line. The application interfaces with the program's [webhook's](https://github.com/PokemonGoMap/PokemonGo-Map/wiki/Using-Webhooks).
+We assume that you already know how to run [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) through the command line. The application interfaces with the app's [webhooks](https://github.com/PokemonGoMap/PokemonGo-Map/wiki/Using-Webhooks).
 
 The complete setup is as follows:
 
