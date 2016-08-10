@@ -1,0 +1,54 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h4 class="modal-title">Settings</h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label>Client.txt Location:</label>
+            <input type="text" class="form-control" id="client-txt-location" disabled>
+          </div>
+          <div class="form-group">
+            <button id="open-client-txt-button" type="button" class="btn btn-default">
+              Open Client.txt
+            </button>
+          </div>
+          <div class="form-group">
+            <label>Path of Exile Account Username</label>
+            <input type="text" class="form-control" id="username">
+          </div>
+          <div class="form-group">
+            <label>poe.trade API Key:</label>
+            <input type="text" class="form-control" id="api-key">
+          </div>
+          <div class="form-group">
+            <label>pathofexile.com Session ID:</label>
+            <input type="text" class="form-control" id="poe-sess-id">
+          </div>
+          <div class="form-group">
+            <label>Username Whitelist (comma separated values):</label>
+            <input type="text" class="form-control" id="username-whitelist">
+          </div>
+          <div class="form-group">
+            <label>Update Frequency (0 for no limit):</label>
+            <input type="number" class="form-control" id="update-frequency" defaultValue=5>
+          </div>
+          <div class="form-group">
+            <button id="clear-data-button" type="button" class="btn btn-default">
+              Clear Data and Restart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button id="save-settings-btn" type="button" class="btn btn-primary">Save changes</button>
+    </div>
+  </div>
+</div>
