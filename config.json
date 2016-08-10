@@ -1,5 +1,5 @@
 {
-  "hostUrl": "http://45.55.211.208:3000",
+  "hostUrl": "http://pokemapmobile.online",
   "metersPerStep": 70,
   "minUserLocDiff": 0.25,
   "nextLocEndpoint": "/next_loc"

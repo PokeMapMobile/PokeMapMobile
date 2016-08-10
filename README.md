@@ -1,13 +1,12 @@
 # PokeMapMobile
 
-PokeMapMobile is a web service that brings your scanning results from your [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone. Get the mobile app on Google Play (link here). iOS app is ready, but without a developer account it can't be published. If you would like to donate to support development.
+PokeMapMobile is a web service that brings your scanning results from your [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone. . iOS app is ready, but without a developer account it can't be published. If you would like to donate to support development.
 
 * Background location tracking to focus your maps to scan where you currently are through your phone's GPS
 * Push notifications via [Pushbullet](https://www.pushbullet.com) to notify you of pokemon even while the app is in the background or when your phone is locked.
 * Customize which Pokemon you are notified of as well as how far the pokemon is. 
 * View Pokemon Locations through the in-app Map or Google Maps locations via Pushbullet
 
-This Repository is specifically for the Desktop application, which serves as the connection between your [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) instances and your phone.
 
 ## Setup
 
@@ -27,15 +26,18 @@ The complete setup is as follows:
 2. Run the PokeMapMobile Desktop.
 3. For each instance of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) you ran earlier, add in their url. For example, if you used port 5000 above, you would input `http://localhost:5000`. Then input the step size for that instance.
 4. Click the connect button. If it turns green then you are all set!
+
 5. Open the PokeMapMobile app on your phone. Touch the gear icon to go to the settings. In the Notification Code field, enter the notification code given in the app. Optionally add in your Pushbullet Access Token. Then Press save.
 
 If you did everything correctly, you will begin to receive pokemon and notifications. Congrats! 
 
+## Running the desktop
+
 ## Screenshots
 
-![alt text](http://i.imgur.com/FwhscSv.png)
-![alt text](http://i.imgur.com/3ZdhtpT.png)
-![alt text](http://i.imgur.com/WUbxOQH.png)
-![alt text](http://i.imgur.com/GXvicBl.png)
-![alt text](http://i.imgur.com/16nfV6W.png)
-![alt text](http://i.imgur.com/s7YRSor.png)
+<img src="http://i.imgur.com/FwhscSv.png" height=480 width=270>
+<img src="http://i.imgur.com/3ZdhtpT.png" height=480 width=270>
+<img src="http://i.imgur.com/WUbxOQH.png" height=480 width=270>
+<img src="http://i.imgur.com/GXvicBl.png" height=480 width=270>
+<img src="http://i.imgur.com/16nfV6W.png" height=480 width=270>
+<img src="http://i.imgur.com/s7YRSor.png" height=480 width=270>
