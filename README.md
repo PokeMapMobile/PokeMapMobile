@@ -11,6 +11,8 @@ PokéMapMobile is a web service that brings your scanning results from your [Pok
 
 PokéMapMobile is for ready for both iOS and Android. However, at this time we havent figured out iOS distribution without the app store. Any tips are welcome!
 
+[Link to latest release](https://github.com/PokeMapMobile/PokeMapMobile/releases/latest)
+
 ## Setup
 
 PokéMapMobile consists of three parts:
