@@ -1,6 +1,6 @@
 # PokéMapMobile
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](paypal.me/pokemapmobile)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/pokemapmobile)
 
 PokeMapMobile is a web service that brings your scanning results from your [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone. Get the mobile app on Google Play (link here).
 
