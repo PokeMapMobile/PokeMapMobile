@@ -9,7 +9,7 @@ PokéMapMobile is a web service that brings your scanning results from your [Pok
 * Customize which Pokémon you are notified of as well as how far the Pokémon is. 
 * View Pokémon Locations through the in-app Map or Google Maps locations via Pushbullet
 
-PokéMapMobile is for both iOS and Android. See our release section for the Android .apk. Working on iOS distribution for jailbroken phones!
+PokéMapMobile is for both iOS and Android. See our release section for Android .apk and the iOS .ipa (to install using something like [Cydia Impactor](https://github.com/PokeMapMobile/PokeMapMobile/releases/download/0.0.1/PokeMapMobile_v0.0.1.ipa)
 
 [Link to latest release](https://github.com/PokeMapMobile/PokeMapMobile/releases/latest)
 
