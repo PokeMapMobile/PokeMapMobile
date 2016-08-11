@@ -9,7 +9,7 @@ PokéMapMobile is a web service that brings your scanning results from your [Pok
 * Customize which Pokémon you are notified of as well as how far the Pokémon is. 
 * View Pokémon Locations through the in-app Map or Google Maps locations via Pushbullet
 
-PokéMapMobile is for ready for both iOS and Android. However, at this time we havent figured out iOS distribution without the app store. Any tips are welcome!
+PokéMapMobile is for both iOS and Android. See our release section for the Android .apk. Working on iOS distribution for jailbroken phones!
 
 [Link to latest release](https://github.com/PokeMapMobile/PokeMapMobile/releases/latest)
 
@@ -32,7 +32,7 @@ The complete setup is as follows:
 3. Run the PokéMapMobile desktop app.
 4. Open the PokéMapMobile app on your phone. Touch the gear icon to go to the settings. In the Notification Code field, enter the notification code given in the desktop app. Optionally add in your Pushbullet Access Token. Then press save.
 5. For each instance of [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) you ran earlier, add in their url. For example, if you used port 5000 above, you would input `http://localhost:5000`. Then input the step size for that instance.
-6. Click the connect button. If it turns green then you are all set!
+6. Click the connect button in the desktop app for each map. If it turns green then you are all set!
 
 
 If you did everything correctly, you will begin to receive pokemon and notifications. Congrats! 
@@ -49,8 +49,8 @@ To connect to multiple instances, use:
 
 ## Screenshots
 
-<img src="http://i.imgur.com/FwhscSv.png" height=480 width=270>
-<img src="http://i.imgur.com/WUbxOQH.png" height=480 width=270>
-<img src="http://i.imgur.com/GXvicBl.png" height=480 width=270>
-<img src="http://i.imgur.com/s7YRSor.png" height=480 width=270>
+<img src="http://i.imgur.com/FwhscSv.png" height=960 width=540>
+<img src="http://i.imgur.com/WUbxOQH.png" height=960 width=540>
+<img src="http://i.imgur.com/GXvicBl.png" height=960 width=540>
+<img src="http://i.imgur.com/s7YRSor.png" height=960 width=540>
 <img src="http://i.imgur.com/3ZdhtpT.png">
