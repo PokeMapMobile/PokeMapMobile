@@ -2,6 +2,14 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/pokemapmobiledev)
 
+**Note**: 0.0.2 release pushed until wednesday. Features/fixes in the next release:
+* Full iOS support fixing background location tracking and more
+* Global notification toggle
+* Pokemon disabled for notification are hidden from the map.
+* Disconnecting/reconnecting the desktop client no longer gives a new notification code.
+* Desktop client now gives a count of how many pokemon webhooks have been received.
+* Desktop client map settings are saved.
+
 PokéMapMobile is a web service that brings your scanning results from your [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone.
 
 * Background location tracking to focus your maps to scan where you currently are through your phone's GPS
