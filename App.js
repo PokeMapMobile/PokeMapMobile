@@ -53,7 +53,7 @@ class App {
       storage.get('desktopClientId')
       .then((desktopClientId) =>
       {
-        if(desktopClientId) {
+        if(typeof desktopClientId === 'string') {
           this.desktopClientId = desktopClientId;
         }
         this.socket = require('socket.io-client')(config.hostUrl + '/desktop');
@@ -90,7 +90,8 @@ class App {
         } else {
           this.oldDesktopClientId = data.desktopClientId
         }
-        require('./static/js/Emitter.js').emit('desktop connected', {desktopClientId: this.desktopClientId});
+        var payload = {desktopClientId: this.desktopClientId};
+        require('./static/js/Emitter.js').emit('desktop connected', payload);
       } else {
           if(this.desktopClientId) {
             this.oldDesktopClientId = this.desktopClientId;

@@ -19,9 +19,7 @@ $(document).ready(() => {
 
   Emitter.on('pokemon', () =>
   {
-    console.log('poke')
     var numPokemon = parseInt($('#pokemon-alert').find('.num-received').text());
-    console.log(numPokemon);
     $('#pokemon-alert').find('.num-received').text(numPokemon + 1);
   })
 
