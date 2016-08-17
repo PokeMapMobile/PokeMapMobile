@@ -2,13 +2,7 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/pokemapmobiledev)
 
-**Note**: 0.0.2 release pushed until wednesday. Features/fixes in the next release:
-* Full iOS support fixing background location tracking and more
-* Global notification toggle
-* Pokemon disabled for notification are hidden from the map.
-* Disconnecting/reconnecting the desktop client no longer gives a new notification code.
-* Desktop client now gives a count of how many pokemon webhooks have been received.
-* Desktop client map settings are saved.
+[Download v0.0.2 now!](https://github.com/PokeMapMobile/PokeMapMobile/releases/latest)
 
 PokéMapMobile is a web service that brings your scanning results from your [PokémonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) to your phone.
 
@@ -19,7 +13,17 @@ PokéMapMobile is a web service that brings your scanning results from your [Pok
 
 PokéMapMobile is for both iOS and Android. See our release section for Android .apk and the iOS .ipa (to install using something like [Cydia Impactor](https://github.com/PokeMapMobile/PokeMapMobile/releases/download/0.0.1/PokeMapMobile_v0.0.1.ipa)
 
-[Link to latest release](https://github.com/PokeMapMobile/PokeMapMobile/releases/latest)
+## Android App Installation
+1. Download .apk from link below to your phone
+2. Open .apk from your phone
+3. Allow installation from unknown sources
+4. Install and you are ready to go!
+
+## iOS App Installation
+1. Download the .ipa and [Cydia Impactor](http://www.cydiaimpactor.com/)
+2. Launch Cydia Impactor and connect your phone to your comupter.
+3. Drag the .ipa onto the tiny Cydia Impactor window.
+4. A prompt should appear and ask for your apple id. Enter it. Cydia Impactor will proceed to install the app to your phone.
 
 ## Setup
 
