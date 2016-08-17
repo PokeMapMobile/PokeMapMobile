@@ -7,6 +7,8 @@ var modal = require('./js/modal.js')
 var storage = require('./js/storage.js')
 var request = require('request');
 
+var maps = [];
+
 $(document).ready(() => {
   Emitter.on('desktop connected', (data) =>
   {
@@ -14,21 +16,46 @@ $(document).ready(() => {
     $('#notification-code-alert').addClass('alert-success');
     $('#notification-code-alert').html('<strong>Success!</strong> Your notification code is <strong>' + data.desktopClientId + '</strong>') 
   });
+
+  Emitter.on('pokemon', () =>
+  {
+    console.log('poke')
+    var numPokemon = parseInt($('#pokemon-alert').find('.num-received').text());
+    console.log(numPokemon);
+    $('#pokemon-alert').find('.num-received').text(numPokemon + 1);
+  })
+
+  storage.get('maps')
+  .then((maps) =>
+  {
+    $('.map').each((index, elem) =>
+    {
+      var map = maps[index] || {};
+      $(elem).find('.host-input').val(map.host || '');
+      $(elem).find('.step-size-input').val(map.steps || '');
+    })
+  })
   var App = new (require('../App.js'))(true);
 
   $('.connect-btn').on('click', (e) =>
   {
-    var container = $(e.target).parent().parent();
+    var container = $(e.target).parent();
     var hostUrl = $(container).find('.host-input').val();
     var stepSize = parseInt($(container).find('.step-size-input').val());
+    var index = $(container).attr('index');
     if(!hostUrl || isNaN(stepSize)) {
-      console.log(hostUrl)
-      console.log('invalid')
+      console.log(hostUrl);
+      console.log('invalid');
       return
     }
     if(hostUrl.charAt(hostUrl.length - 1) == '/') {
       hostUrl = hostUrl.slice(0, hostUrl.length - 1);
     }
+    maps[index] = {
+      host: hostUrl,
+      steps: stepSize,
+    }
+    storage.set('maps', maps);
     request(hostUrl + '/loc', (err, res, body) =>
     {
       var location = {};
@@ -48,19 +75,8 @@ $(document).ready(() => {
         $(e.target).removeClass('btn-success')
         $(e.target).addClass('btn-success')
         $(e.target).text('Connected!');
-        var isUnique = true;
-        for(var i in App.maps) {
-          if(App.maps[i].host == hostUrl && App.maps[i].steps == stepSize) {
-            isUnique = false;
-          }
-        }
-        if(isUnique) {
-          App.maps.push({
-            host: hostUrl,
-            steps: stepSize,
-            location: null,
-          })
-        }
+        $('#pokemon-alert').show();
+        App.maps[index] = maps[index];
       }
     })
   })

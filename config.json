@@ -1,5 +1,6 @@
 {
   "hostUrl": "http://pokemapmobile.online",
+  "port": 3001,
   "metersPerStep": 70,
   "minUserLocDiff": 0.25,
   "nextLocEndpoint": "/next_loc"

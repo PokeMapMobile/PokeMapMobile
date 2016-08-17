@@ -5,6 +5,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var geolib = require('geolib');
+var storage = require('./static/js/storage.js')
 const commandLineArgs = require('command-line-args')
 
 const optionDefinitions = [
@@ -20,8 +21,6 @@ class App {
     this.express = express();
     this.express.use(bodyParser.json())
     this.express.use('/', this.routes());
-    this.socket = require('socket.io-client')(config.hostUrl + '/desktop');
-    this.socketEvents();
 
 
     
@@ -48,8 +47,20 @@ class App {
         }
         this.maps.push(map);
       }
+      this.socket = require('socket.io-client')(config.hostUrl + '/desktop');
+      this.socketEvents();
+    } else {
+      storage.get('desktopClientId')
+      .then((desktopClientId) =>
+      {
+        if(desktopClientId) {
+          this.desktopClientId = desktopClientId;
+        }
+        this.socket = require('socket.io-client')(config.hostUrl + '/desktop');
+        this.socketEvents();
+      })
     }
-    this.express.listen(3001);
+    this.express.listen(config.port);
   }
 
   routes()
@@ -57,8 +68,10 @@ class App {
     var router = express.Router();
     router.post('/', (req, res) => {
       if(this.desktopClientId && this.socket.connected) {
+        Emitter.emit('pokemon');
         this.socket.emit('pokemon', {
           desktopClientId: this.desktopClientId,
+          oldDesktopClientId: this.oldDesktopClientId,
           pokemon: req.body.message || null,
         });
       }
@@ -70,15 +83,25 @@ class App {
   {
     this.socket.on('desktop connected', (data) =>
     {
-      this.desktopClientId = data.desktopClientId;
-      console.log('Connected to server. Your ClientId is: ' + this.desktopClientId);
       if(this.isElectronApp) {
-        require('./static/js/Emitter.js').emit('desktop connected', data);
+        if(!this.desktopClientId) {
+          this.desktopClientId = data.desktopClientId;
+          storage.set('desktopClientId', data.desktopClientId);
+        } else {
+          this.oldDesktopClientId = data.desktopClientId
+        }
+        require('./static/js/Emitter.js').emit('desktop connected', {desktopClientId: this.desktopClientId});
+      } else {
+          if(this.desktopClientId) {
+            this.oldDesktopClientId = this.desktopClientId;
+          }
+          this.desktopClientId = data.desktopClientId;
       }
+      console.log('Connected to server. Your ClientId is: ' + this.desktopClientId);
     })
     this.socket.on('location update', (data) =>
     {
-      console.log('got new location')
+      console.log('Received location update.')
       var newLocation = {
         latitude: data.lat,
         longitude: data.lng,
