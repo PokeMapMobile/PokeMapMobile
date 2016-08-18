@@ -75,6 +75,7 @@ class App {
           pokemon: req.body.message || null,
         });
       }
+      res.end('ok');
     });
     return router;
   }
